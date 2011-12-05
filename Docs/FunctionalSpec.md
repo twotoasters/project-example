@@ -10,7 +10,8 @@
 
 ### General Questions
 
-	Good place to place general questions and mark assumptions on the general functional spec of the application these should be brought up with the client and clarified as well as documented here.
+	Good place to place general questions and mark assumptions on the general functional spec of the application these 
+	should be brought up with the client and clarified as well as documented here.
 
 1. Is load screen really meant to be a progress bar? iOS load screens are static images.
 2. Should the app support landscape mode? - Expecting no
