@@ -1,8 +1,14 @@
+### Standup 1/2/12
+
+
+
+---
+
 ### Build #14 1/1/12
 
 #### Issues Closed
 
-- [Issue #14]("https://github.com/twotoasters/project-example/issues/1")
+- #1 Slice Assets
 - [Issue #15]("https://github.com/twotoasters/project-example/issues/1")
 - [Issue #17]("https://github.com/twotoasters/project-example/issues/1")
 
