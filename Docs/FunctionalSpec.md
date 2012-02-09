@@ -34,7 +34,7 @@ Default launch screen is a static Default.png loaded at app launch.
 
 #### Screen Mockups
 
-<img src="https://github.com/twotoasters/project-template/raw/master/Design/Mockups/Default.png" width="240px">
+<img src="https://github.com/twotoasters/project-example/raw/master/Design/Mockups/Default.png" width="240px">
 
 #### API Usage
 
