@@ -18,21 +18,21 @@
 don't display anywhere in current design mockups. This also doesn't specify if the matched username belongs to the user.
 3. What happens when user is not connected to network?
 
-### Minimum requirements for iOS App
+### Deployment Targets
 	Supported devices/os versions should be listed here
-- iOS 4
+- iOS 4.2+
 
 ---
 
 ## 1. Initial user experience 
 
-### 1.1 Launch Screen
+### 1.1 Launch Splash Screen
 
 #### Overview
 
-Default launch screen is a static Default.png loaded at app launch. 
+Default launch screen is a static Default.png loaded at app launch. And then displayed for 3 seconds after the application has loaded.
 
-#### Screen Mockups
+#### Mockups
 
 <img src="https://github.com/twotoasters/project-example/raw/master/Design/Mockups/Default.png" width="240px">
 
@@ -43,8 +43,33 @@ Default launch screen is a static Default.png loaded at app launch.
 #### Stories
 
 - The user launches the app and is presented with a default launch screen
-	- The user has already logged in and is routed to (x.x Connections)
-	- The user is not logged in and is routed to (x.x Login View)
+	- The user has already logged in and is routed to (1.2 Home)
+	- The user is not logged in and is routed to (1.3 Login)
 	
-- The user launches the app and is routed to (x.x Connections), but the Access Token has expired or has been revoked.
-	- The user is returned to the beginning of the process for authenticating the service that has expired and sent to (x.x Login)
+- The user launches the app and is routed to (1.2 Home), but the Access Token has expired or has been revoked.
+	- The user is returned to 1.1 and then sent to (1.3 Login)
+
+
+### 1.2 Home
+
+#### Overview
+
+The home view is the primary landing page for the application, it provides users a view of recently added albums. Users can also access other featured lists "Top Ten" and "Genres" via the top segmented control. 
+
+#### Mockups
+
+<img src="https://github.com/twotoasters/project-example/raw/master/Design/Mockups/screen1.png" width="240px">
+
+#### API Usage
+
+**GET** `/albums/new`
+
+#### Stories
+
+- The user launches the app and is presented with the home screen
+- The user can see the top four featured albums with their special promotional images
+- The user can tap on any of the top four featured albums images to go to the album details view 2.1
+- The user can view a list of new release albums sorted by date
+	- The user can see the album title, artist, average rating, rating count, and album art
+- The user can tap on any of those albums in the list to go to the album details view 2.1
+- The user can tap on the "Top Tens" or "Genres" segment button to go to 1.2.1 and 1.2.2 respectively
