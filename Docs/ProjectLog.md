@@ -19,20 +19,19 @@ Notes
 
 ---
 
-### Build #14 1/1/12
+### Build #1 1/1/12
 
 #### Issues Closed
 
-- #1 Slice Assets
-- [Issue #15]("https://github.com/twotoasters/project-example/issues/1")
-- [Issue #17]("https://github.com/twotoasters/project-example/issues/1")
+- [Issue #2 - Present user with splash screen on launch]("https://github.com/twotoasters/project-example/issues/2")
+- [Issue #6 - Present the home view after the splash screen]("https://github.com/twotoasters/project-example/issues/6")
 
 #### Issues In Progress
 
-- [Issue #16]("https://github.com/twotoasters/project-example/issues/1")
-- [Issue #22]("https://github.com/twotoasters/project-example/issues/1")
-- [Issue #33]("https://github.com/twotoasters/project-example/issues/1")
-- [Issue #42]("https://github.com/twotoasters/project-example/issues/1")
+- [Issue #1 - Slice assets]("https://github.com/twotoasters/project-example/issues/1")
+- [Issue #3 - Redirect user to 1.2 if logged in]("https://github.com/twotoasters/project-example/issues/3")
+- [Issue #4 - Redirect user to 1.3 if not logged in]("https://github.com/twotoasters/project-example/issues/4")
+- [Issue #5 - Check token expiry and redirect to 1.]("https://github.com/twotoasters/project-example/issues/5")
 
 #### Notes
 
