@@ -1,6 +1,21 @@
+### Standup 1/3/12
+
+Notes
+
+- TT - Review Jun Group feedback on spec docs, adjust format if necessary 
+- TT - Add an indicator as to whether or not fine grained location services data is available
+- Client - Provide examples of web service calls with required information
+
+---
+
 ### Standup 1/2/12
 
+Notes
 
+- TT - began creation of functional specification document, pull out information re: API from proposal
+- TT - Invite Client to Github respository
+- TT - Update functional spec with notes regarding SVG Support and Framework Support (Titanium & Unity).
+- TT - Review HTML autoplay example.
 
 ---
 
