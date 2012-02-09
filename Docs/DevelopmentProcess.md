@@ -19,10 +19,16 @@ There are examples of good milestones available in the `Issues` tab for this pro
 - **Bug** - represents a defect in the implementation of a delivered story *(App crashes when you tap cancel)*
 - **Chore** - represents a behind-the-scenes task required to implement a story *(Setup testing server in Sinatra)*
 - **QA** - represents a feature/bug that needs extra attention in QA *(Check that the details view doesnt crash in landscape orientations)*
+- **Design** - Represents a task that requires assets to complete or Design work to be performed
 
-### QA
+### Quality Assurance
 
-`TODO`
+QA should be performed throughout the development process.  QA Responsibilities include:
+
+- Execution of test plan criteria 
+- Test all recently closed Issues marked as Feature or Bug (see above)
+- Follow up on Issues flagged with the QA label
+
 
 ### Time Tracking
 
