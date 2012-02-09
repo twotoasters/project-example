@@ -23,15 +23,15 @@ Notes
 
 #### Issues Closed
 
-- [Issue #2 - Present user with splash screen on launch]("https://github.com/twotoasters/project-example/issues/2")
-- [Issue #6 - Present the home view after the splash screen]("https://github.com/twotoasters/project-example/issues/6")
+- [Issue #2 - Present user with splash screen on launch](https://github.com/twotoasters/project-example/issues/2)
+- [Issue #6 - Present the home view after the splash screen](https://github.com/twotoasters/project-example/issues/6)
 
 #### Issues In Progress
 
-- [Issue #1 - Slice assets]("https://github.com/twotoasters/project-example/issues/1")
-- [Issue #3 - Redirect user to 1.2 if logged in]("https://github.com/twotoasters/project-example/issues/3")
-- [Issue #4 - Redirect user to 1.3 if not logged in]("https://github.com/twotoasters/project-example/issues/4")
-- [Issue #5 - Check token expiry and redirect to 1.]("https://github.com/twotoasters/project-example/issues/5")
+- [Issue #1 - Slice assets](https://github.com/twotoasters/project-example/issues/1)
+- [Issue #3 - Redirect user to 1.2 if logged in](https://github.com/twotoasters/project-example/issues/3)
+- [Issue #4 - Redirect user to 1.3 if not logged in](https://github.com/twotoasters/project-example/issues/4)
+- [Issue #5 - Check token expiry and redirect to 1.](https://github.com/twotoasters/project-example/issues/5)
 
 #### Notes
 
@@ -39,4 +39,4 @@ This build takes care of most of the issues from last build except #16. API issu
 
 #### Link
 
-- [Hockey App Build]("https://hockeyapp.com/someapp/build/42")
+- [Hockey App Build](https://hockeyapp.com/someapp/build/42)
