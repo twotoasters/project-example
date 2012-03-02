@@ -40,7 +40,7 @@ Harvest entries should follow one of the following templates
 - **Troubleshooting** `#issue number` - `description`
 - **Testing** `#issue number` - `description`
 - **Planning** - `description`
-- **Deploying** - 'descriptiond
+- **Deploying** - `description`
 - **Standup**
 - **Source Code Management**
 
