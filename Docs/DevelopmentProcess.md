@@ -15,11 +15,12 @@ There are examples of good milestones available in the `Issues` tab for this pro
 
 ### Labels
 
-- **Feature** - represents one aspect of user facing value *(User can tap cancel to dismiss modal view)*
-- **Bug** - represents a defect in the implementation of a delivered story *(App crashes when you tap cancel)*
-- **Chore** - represents a behind-the-scenes task required to implement a story *(Setup testing server in Sinatra)*
-- **QA** - represents a feature/bug that needs extra attention in QA *(Check that the details view doesnt crash in landscape orientations)*
+- **Feature** - Represents one aspect of user facing value *(User can tap cancel to dismiss modal view)*
+- **Bug** - Represents a defect in the implementation of a delivered story *(App crashes when you tap cancel)*
+- **Chore** - Represents a behind-the-scenes task required to implement a story *(Setup testing server in Sinatra)*
+- **QA** - Represents a feature/bug that needs extra attention in QA *(Check that the details view doesnt crash in landscape orientations)*
 - **Design** - Represents a task that requires assets to complete or Design work to be performed
+- **Staged** - Represents a task that has been completed but not yet merged to Master.  This is a temporary tag.
 
 ### Quality Assurance
 
