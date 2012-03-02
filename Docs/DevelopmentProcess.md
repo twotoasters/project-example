@@ -39,7 +39,10 @@ Harvest entries should follow one of the following templates
 - **Designing** `#issue number` - `description`
 - **Troubleshooting** `#issue number` - `description`
 - **Testing** `#issue number` - `description`
-- **Planning** `description`
+- **Planning** - `description`
+- **Deploying** - 'descriptiond
+- **Standup**
+- **Source Code Management**
 
 **Examples**
 
