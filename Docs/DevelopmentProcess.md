@@ -6,6 +6,11 @@ All github issues should be assigned to a Milestone and one or more Labels as de
 
 There are examples of good issues available in the `Issues` tab for this project
 
+**Things to Remember**
+
+- All Issues should have at least one label
+- All Issues must be associated with a Milestone
+
 ---
 
 ### Milestones
