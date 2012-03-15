@@ -6,12 +6,15 @@ All github issues should be assigned to a Milestone and one or more Labels as de
 
 There are examples of good issues available in the `Issues` tab for this project
 
+---
 
 ### Milestones
 
 Milestones are larger collections of issues divided where possible into common sense units of user functionality. Most views in an app as defined in the functional spec should be their own distinct milestone with a set of issues related to the user stories on that view
 
 There are examples of good milestones available in the `Issues` tab for this project
+
+---
 
 ### Labels
 
@@ -22,6 +25,14 @@ There are examples of good milestones available in the `Issues` tab for this pro
 - **Design** - Represents a task that requires assets to complete or Design work to be performed
 - **Staged** - Represents a task that has been completed but not yet merged to Master.  This is a temporary tag.
 
+---
+
+### Code Review Process
+
+- stuff goes here eventually
+
+---
+
 ### Quality Assurance
 
 QA should be performed throughout the development process.  QA Responsibilities include:
@@ -30,6 +41,7 @@ QA should be performed throughout the development process.  QA Responsibilities 
 - Test all recently closed Issues marked as Feature or Bug (see above)
 - Follow up on Issues flagged with the QA label
 
+---
 
 ### Time Tracking
 
@@ -50,6 +62,6 @@ Harvest entries should follow one of the following templates
 ````
 Coding #41 - User Sign Out
 Reviewing #17
-Troubleshooting #22 - Discussing user authentication issue with Steve
+Troubleshooting #22 - Discussing user authentication issue with client
 Planning - Breaking out functional spec into github issues
 ````
