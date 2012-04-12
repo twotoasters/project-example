@@ -83,6 +83,14 @@ Use the [appledoc](http://gentlebytes.com/appledoc/) style when you can to provi
 
 ---
 
+# Sample URLs of other Style Guides
+
+- [GitHub's Ruby Guide](https://github.com/styleguide/ruby)
+- [Apple's Guidlines](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)
+- [Luke Redpath's Guide](http://lukeredpath.co.uk/blog/my-objective-c-style-guide.html)
+- [Google's Objective-C Guide](http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml)
+- [Marcus Zarra's Guide](http://www.cimgf.com/zds-code-style-guide/)
+
 
 # All Projects 
 
