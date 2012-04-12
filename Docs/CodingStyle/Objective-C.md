@@ -1,5 +1,90 @@
-# All Projects 
+# Objective-C Style Guide
 
+## Coding Styles
+
+- Use soft tabs with 4-space indentation
+
+````objective-c
+
+if (someVal) {
+    // 4 spaces
+}
+
+````
+
+- Methods should have their `{` on a new line
+
+````objective-c
+
+- (void)completeActionWithObject:(NSObject *)object
+{
+	// implementation
+}
+
+````
+
+- Use pragma marks to identify sections of your implementation. For example, all UITableView Data Source methods should be below a `#pragma mark`.
+
+````objective-c
+
+#pragma mark - UITableView Data Source Methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
+{
+    return 1;
+}
+
+#pragma mark - My Custom Delegate Methods
+
+- (void)myObject:(MyObject *)object didFindInformation:(MyInformation *)myInformation 
+{
+    // implementation
+}
+
+```` 
+
+- Use a single empty line between functions
+
+````objective-c
+
+- (void)someObjectDidRespond 
+{
+    // implementation
+}
+
+- (void)someObjectWillRespond
+{
+    // implementation
+}
+
+````
+
+## Documentation
+
+Use the [appledoc](http://gentlebytes.com/appledoc/) style when you can to provide easy documentation with appledoc.
+
+````objective-c
+
+/** Designated initializer for creating an instance of this object
+ *
+ * @param object Requires an instance of class CustomObject to initialize
+ * @returns an instance of class ThisClass fully initialized
+ */
+- (id)initWithObject:(CustomObject *)object;
+
+````
+
+
+
+
+---
+
+# Notes from meeting on 4/10
+
+---
+
+
+# All Projects 
 
 void function() 
 {
@@ -36,53 +121,13 @@ if (somethingReallyLong &&
 	[self doSomething]; 	 
 }
 
-switch (someEnum) {
-	case
-}
-
 @propery (nonatomic, assign, getter=isEditable) BOOL editable;
 
 @synthesize editable = _editable;
 
 BOOL _editable;
 
-- (BOOL)isEditable {
-	return _editable;
-}
-
-- (void)setEditable:(BOOL)editable {
-	_editable = editable;
-}
-
-@interface CALayer ()
-
-- (void)clearString;
-
-@end
-
-@implementation NSString (MYSTRINGADDITIONS)
-
-- (void)clearString {
-	self = @"Charlie";
-}
-
-@end
-
-
-
 ---
-
-- (void)doSomethingAwesome 
-{
-	// do something big and sync
-}
-
-- (void)doSomethingAwesomeWithCompletionHandler:(void (^)(void))handler {
-	[self doSomethingAsyncWithCompletion:^ {
-		handler();
-	}];
-}
-
 
 ## Project Naming
 
