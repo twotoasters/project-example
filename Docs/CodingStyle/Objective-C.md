@@ -88,14 +88,17 @@ In Xcode, follow the following standard layout. All top-level Xcode groups shoul
 	│   ├── AppDelegate.h|.m
 	│   ├── SomeProj-prefix.pch
 	│   ├── Supporting Files
-	|	|	├── Info.plist
-	|	|	├── SomeProj-Info.plist
+	│   │   ├── en.lproj
+	│   │   │   ├── InfoPlist.strings
+	│   │   ├── SomeProj-Info.plist
+	│   │   ├── SompProj-Prefix.pch
+	│   │   ├── main.m
 	│   ├── Categories
 	│   ├── Protocols
 	│   ├── Resources
-	├── Model
-	├── View
-	├── Controller
+	├── Models
+	├── Views
+	├── Controllers
 	SomeProj-UnitTests
 	SomeProj-IntegrationTests
 	Libraries
