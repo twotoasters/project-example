@@ -1,3 +1,31 @@
+### Iteration 1 Sprint Plan (Monday, May 7th 2012 - Friday May 18th, 2012)
+
+Iteration Milestone - https://github.com/twotoasters/project-example/issues?milestone=1&state=open
+
+**Planned Work**
+- Github Issue Number - Description
+- Github Issue Number - Description                        
+- Github Issue Number - Description
+
+**Important Dates / Deadlines**
+- 2.4 Assets Due by 3/10
+- Initial Photo Upload API Due by 3/8
+- Scott out of office on 3/15 for Diablo III
+
+**Open Questions**
+- 2.3 - Should checkbox be checked by default?
+- 4.2 - User has now was of returning to previous screen if logging in with facebook
+
+**Risks**
+- Functionality in Section 12 requirements significant refactor of existing codebase
+- Login Functionality relies on external API
+
+**General Notes**
+
+Summary of the iteration goes here 
+
+---
+
 ### Standup 1/3/12
 
 Notes
