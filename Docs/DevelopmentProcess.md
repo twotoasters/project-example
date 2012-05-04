@@ -48,6 +48,23 @@ QA should be performed throughout the development process.  QA Responsibilities 
 
 ---
 
+
+### Creating the Functional Specification Document
+
+For each section in the document, insert something like this:
+
+    <a name="1.2.1" />
+
+    ### 1.2.1 Search Modal
+
+Then, when you have a reference to that section, do it like so:
+
+After the user has searched using the search modal view, [1.2.1](#1.2.1), the map will set a zoom level above the coordinates of the search
+
+When viewed on Github the spec will now have a link to section that you can press to jump to that section in the document.
+
+---
+
 ### Time Tracking
 
 Harvest entries should follow one of the following templates
