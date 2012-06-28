@@ -1,11 +1,11 @@
-### Iteration 1 Sprint Plan (Monday, May 7th 2012 - Friday May 18th, 2012)
+### Iteration 2 Sprint Plan (Monday, June 25th 2012 - Friday, June 29th 2012)
 
 Iteration Milestone - https://github.com/twotoasters/project-example/issues?milestone=1&state=open
 
 **Planned Work**
-- Github Issue Number - Description
-- Github Issue Number - Description                        
-- Github Issue Number - Description
+- Complete Launch Screen
+- Setup Testing Harness
+- Star work on Nav Bar
 
 **Important Dates / Deadlines**
 - 2.4 Assets Due by 3/10
@@ -43,7 +43,7 @@ Notes
 - TT - began creation of functional specification document, pull out information re: API from proposal
 - TT - Invite Client to Github respository
 - TT - Update functional spec with notes regarding SVG Support and Framework Support (Titanium & Unity).
-- TT - Review HTML autoplay example.
+- TT - Review HTML Autoplay example.
 
 ---
 
