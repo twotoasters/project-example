@@ -17,3 +17,4 @@ Some examples are in the docs directory, when documents are client supplied it i
 # Design/
 
 The design directory should include all design/intermediary assets for the application, this should include wireframes/mockups as well as any psd files with the completed designs. These should be kept up to date such that someone should be able to resume development on the project after a potentially a long period of activity without missing any source assets (and without needing access to a dropbox folder or old emails). Changes should be accompanied by meaningful change log messages so we have record of the project changes in design. This should *not* be the directory for project assets to be included in XCode.
+
