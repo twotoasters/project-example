@@ -5,7 +5,7 @@ Iteration Milestone - https://github.com/twotoasters/project-example/issues?mile
 **Planned Work**
 - Complete Launch Screen
 - Setup Testing Harness
-- Star work on Nav Bar
+- Start work on Nav Ba
 
 **Important Dates / Deadlines**
 - 2.4 Assets Due by 3/10
