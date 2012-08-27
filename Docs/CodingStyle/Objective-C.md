@@ -102,9 +102,23 @@ NSString * const kTTNotificationsApplicationOffline = @"com.twotoasters.notifica
 
 ````
 
-### Constants should be preferred over the preprocessor (`#define`) when possible. 
+### Constants should be preferred over the preprocessor (`#define`) when possible.
 
-`#define` uses the preprocessor to replace the values with the defined value or macro. For example, `#define SOME_VAL 3` replaces all samples of `SOME_VAL` with 3, but also you don't get the type safety of a constant definition of the value. Actual constants should be used in favor of preprocessor macros .
+Constants in global namespace should always start with a lowercase "k"
+
+````objective-c
+
+// Header
+extern NSString * const kTTAPIBaseURL;
+extern NSString * const kTTNotificationLocationUpdated;
+
+// Implementation
+NSString * const kTTAPIBaseURL = @"http://www.twotoasters.com";
+NSString * const kTTNotificationLocationUpdated = @"com.twotoasters.notification.loactionUpdated";
+
+````
+
+`#define` uses the preprocessor to replace the values with the defined value or macro. For example, `#define SOME_VAL 3` replaces all samples of `SOME_VAL` with 3, but also you don't get the type safety of a constant definition of the value. Actual constants should be used in favor of preprocessor macros.
 
 - [Preprocessor Smells](http://qualitycoding.org/preprocessor/)
 
@@ -301,10 +315,12 @@ When creating protocols for use as delegates, you should alwasy model the method
 	// Wrong 
 	- (void)finishedProcessing;
 	- (void)finishedProcessingWithString:(NSString *)string;
+	- (void)finishedProcessingWithString:(NSString *)string andImage:(UIImage *)image;
 	
 	// Correct
 	- (void)objectDidFinishProcessing:(NSObject *)object;
 	- (void)object:(NSObject *)object didFinishProcessingWithString:(NSString *)string;
+	- (void)object:(NSObject *)object didFinishProcessingWithString:(NSString *)string image:(UIImage *)image;
 ````
 
 ### Category Naming
