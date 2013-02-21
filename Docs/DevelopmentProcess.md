@@ -38,6 +38,41 @@ There are examples of good milestones available in the `Issues` tab for this pro
 
 ---
 
+### Versioning of Builds
+
+In order to log bugs for features that have been confirmed as finished on a specific build and to better track fixes and ensure that bugs are being regressed on proper builds, a standard versioning system is suggested below. The below standards will allow developers to easily assign finished stories, tasks, and fixed bugs to specific build versions. This will allow the testing group to sort stories, tasks and bugs by those build versions for focusing test runs and properly regressing fixed bugs.
+
+#### Versioning Standards
+
+Each project should follow the below standards for version naming when pushing a build to TestFlight or Hockey App. 
+
+ - The format for versions will look as follows W.X.Y.Z 
+ - W.X will be reserved for designating build numbers post launch and will conform to the standards for submission to Apple and Google
+ - Y will be the number of the current sprint being worked on
+ - Z will be the number of the build submitted to QA for testing with the initial build of a sprint being W.X.Y.0
+ - The final approved build of a sprint will have a Z value of whatever the last build of the sprint is. 
+
+#### Examples
+
+ - The third build in sprint 5 would have the following version:  0.0.5.2
+ - The final build in sprint 5 was the 8th build created it would have the following version: 0.0.5.7
+
+#### In-App Version Display
+
+Build versions should be displayed within our apps in the Help or About screen of the app to allow for quick viewing by testers versus having to leave the app and check the TestFlight or Hockey App for this information. This information could also help users and clients reference the build number when discussing issues, allowing them to determine if there is a need to update their app to a newer version. 
+
+### Usage of Versioning
+
+#### Developers
+
+Developers will be required to assign a version to completed Stories, Tasks, and Bugs within Jira. This will allow testers to sort through these items using the version to determine completed stories they need to test and completed bugs that need to be regressed.
+
+#### Testers
+
+Testers will be required to assign a version to bugs being logged to inform developers as to which build the bug was found on.
+
+---
+
 ### Quality Assurance
 
 QA should be performed throughout the development process.  QA Responsibilities include:
