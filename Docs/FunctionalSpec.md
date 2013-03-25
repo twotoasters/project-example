@@ -26,7 +26,7 @@ A TwitterHelper class and Api.classes will be made with standard Twitter REST AP
 #### Application Icon
 - ic_launcher.png
 
-    ![ic_launcher.png](../res/drawable-xhdpi/ic_launcher.png)
+    ![ic_launcher.png](../Design/ic_launcher.png)
 
 #### Application Colors
 - $tt-red: #e1261c
@@ -156,7 +156,8 @@ This is used when needing to expand functionality of something selected in the M
 # 2 Standard Feed
 This is the standard listview/feed that displays feed information from twitter.
 
-[![Standard feed](../Design/../Design/Screens/screen_s.jpg](../Design/../Design/Screens/screen.jpg) "Standard Feed screenshot")
+[![../Design/../Design/Screens/screen_s.jpg](../Design/../Design/Screens/screen_s.jpg)](../Design/../Design/Screens/screen_s.jpg)
+
 \* The header is not apart of the Standard Feed
 
 ## 2.0 ListView
@@ -401,7 +402,7 @@ Logging in will be handled with a fragment
 [![../Design/Screens/screen_6s.jpg](../Design/Screens/screen_6s.jpg)](../Design/Screens/screen_6.jpg)
 
 ## Navigation Menu
-![1_2_Navigation_Menu+REDLINES](mockups/1_2_Navigation_Menu+REDLINES_s.jpg "1_2_Navigation_Menu+REDLINES")
+[![../Design/Screens/screen_6s.jpg](../Design/Mockups/1_2_Navigation_Menu+REDLINES_s.jpg)](../Design/Mockups/1_2_Navigation_Menu+REDLINES.jpg)
 
 ## Profile fragment as main
 [![../Design/Screens/screen_9s.jpg](../Design/Screens/screen_9s.jpg)](../Design/Screens/screen_9.jpg)
