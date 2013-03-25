@@ -13,7 +13,7 @@ Version 1.0 - Should be finished by April 1st, 2013
 The app should scale well with android devices with 3.2 inch screens to 10.1 inch screens. This will be done by having both specific resources for different device sizes and resources which can intelligently adapt.
 
 ### Android Firmware
-As Hoot's and AndrOAuth's minium api level is 8, this twitter example application will follow suit. To leverage modern UI practices, compatibility libraries will be used as sub models.
+As Hoot's and AndrOAuth's minimum api level is 8, this twitter example application will follow suit. To leverage modern UI practices, compatibility libraries will be used as sub models.
 
 ### Twitter Login
 This will be accomplished with a fragment containing a webview. This will be module with few/no dependencies other then AndrOAuth so that it can easily be reused by other projects.
@@ -108,7 +108,7 @@ Interacting with the Navigation Menu changes the Main Fragment
 
 ### Stories
 - The user will be able to glance at their quick profile information within the navigation menu
-    - Their avator and basic stats will be visible from here
+    - Their avatar and basic stats will be visible from here
 	- By clicking on their profile they will be brought to that location in their profile in the main fragment.
 - The user should know where they are in the app via highlight in the navigation menu
 - By click on one of the items the user can navigate around the app.
@@ -252,8 +252,8 @@ This will be called the Tweets Fragment and will load the users standard twitter
 - The user will be displayed 4 options
     - If it is someone else's tweet [ reply | retweet | favorite | share ]
     - If it is a tweet by the user [ reply | delete | favorite | share ]
-- When the user presses reply the MessageBox will open with relavent data filled in
-- When the user presses retweet the MessageBox will open with relavent data filled in
+- When the user presses reply the MessageBox will open with relevant data filled in
+- When the user presses retweet the MessageBox will open with relevant data filled in
 - When the user presses delete, they will get a pop-up confirming the deletion
 - When the user presses favorite will toast a success or failure.
 - When the user presses share android's default share button will take over
