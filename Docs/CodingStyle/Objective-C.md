@@ -139,13 +139,23 @@ When using blocks as a completion mechanism for UI updates, you may not know or 
 
 ````
 
+### Dot syntax
+
+Since it's more convenient than the original bracket syntax for calling methods, dot syntax is often OK to use even without a corresponding `@property`.
+
+Dot syntax is not OK for class methods. For example, you would not call `NSApplication.sharedApplication` nor `NSObject.alloc`, but it's OK to call `@"Example string".length`.
+
+In the "setter" case, any dot syntax instance method call is OK.
+
+In the "getter" case, don't use dot syntax when the method returns `void` or is in the `init` family. So you would not call `tableView.reloadData` nor `[NSObject alloc].init`, even though `tableView.indexPathForSelectedRow` is OK.
+
 ### Don't initialize variables to 0 or nil in the init method; it's redundant. 
 
 All memory for a newly allocated object is initialized to 0, so don't clutter up the init method by re-initializing variables to 0 or nil.
 
 ### NSInteger & CGFloat vs. int & float - Apple provided types should be preferred over their C types.
 
-### Keep your header files simple a possible
+### Keep your header files simple as possible
 
 The public APIs defined in the header files of the objects you create should only define what consumers should be able to call. Any methods or properties used solely by the class itself should be defined in a class extention in your implementation file.
 
@@ -157,7 +167,7 @@ The public APIs defined in the header files of the objects you create should onl
 
 ````
 
-If you need subclasses to have access to it's superclass' implemations, use a category to create a "protected" header.
+If you need subclasses to have access to it's superclass's implementations, use a category to create a "protected" header.
 
 You should even put 'non-public' protocols you are conforming to on your class extension:
 
