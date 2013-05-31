@@ -139,6 +139,30 @@ When using blocks as a completion mechanism for UI updates, you may not know or 
 
 ````
 
+### Literals
+
+Use of Objective-C's literals syntax is preferred. When using literals add spaces for readability.
+
+````objective-c
+
+NSNumber *slope = @( rise / run );
+NSArray *things = @[ first, second, third ];
+
+````
+
+With Dictionaries if there is one key-value pair it is fine to leave it on one line, otherwise break each key-value pair onto a separate newline.
+
+````objective-c
+
+NSDictionary *dict = @{ key: value };
+NSDictionary *dict = @{
+	key: value,
+	foo: bar,
+	otherKey: otherValue
+}
+
+````
+
 ### Dot syntax
 
 Since it's more convenient than the original bracket syntax for calling methods, dot syntax is often OK to use even without a corresponding `@property`.
