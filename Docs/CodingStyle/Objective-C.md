@@ -43,6 +43,8 @@ if (someVal) {
 
 ```` 
 
+Use the name of the class for where applicable (ex: `UITableViewDataSource` not `Table View Datasource`) so that they can be clicked through to their definition.
+
 ### Use a single empty line between functions
 
 ````objective-c
@@ -59,34 +61,25 @@ if (someVal) {
 
 ````
 
-### Constants should be used in place of literal statements. 
+### All values should have context. Avoid "magic numbers" (or strings).
+
+Using literals are fine if they are given a context such as membership in a constraint or format string or as returned by a method such as `tableView:heightForRowAtIndexPath:`
+
+If you are using a number in more than one place in the code and it represents the same thing then it should become a constant.
 
 ````objective-c
 
+// Metrics Dictionary
+
 // Wrong
-[self.view setFrame:(CGRect){ 22, 31.4, 320, 44 }];
-[self.view setFrame:(CGRect){ 22 + 2, 31.4, 320, 44 }];
-[[NSNotificationCenter defaultCenter] postNotification:@"OHAI-THERE" object:nil];
+[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[view]-5-|" options:0 metrics:nil views:views];
+[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[view]-5-|" options:0 metrics:nil views:views];[[NSNotificationCenter defaultCenter] postNotification:@"OHAI-THERE" object:nil];
 
 // Correct:
 
-// Define the constant where it makes sense for the current scenario. For example, the frame sizes don't need to be global to the application and can be defined in the current class.
-
-static const CGFloat kCustomViewFrameLeftOffset = 22.0f;
-static const CGFloat kCustomViewFrameTopOffset = 31.4f;
-
-// or
-
-static const CGSize kCustomViewSize = (CGSize){ 320.0f, 44.0f };
-
-// which then leads to 
-
-[self.view setFrame:(CGRect){ kCustomViewFrameLeftOffset, kCustomViewFrameTopOffset, kCustomViewSize }];
-
-// Offsets should be defined either as a constant or an in scope variable that describes it purpose. Error on the side of being more descriptive:
-
-CGFloat leftOffsetFromFrame = 2.0f;
-[self.view setFrame:(CGRect){ kCustomViewFrameLeftOffset + leftOffsetFromFrame, kCustomViewFrameTopOffset, kCustomViewSize }];
+NSDictionary *metrics = @{ @"padding" : @5 };
+[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-padding-[view]-padding-|" options:0 metrics:metrics views:views];
+[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-padding-[view]-padding-|" options:0 metrics:metrics views:views];
 
 // Notification keys or other dictionary keys which are used in multiple locations in an application, should be defined in a `[project_prefix]Environment` header. 
 
@@ -362,7 +355,7 @@ Categories should be used when creating reusable extensions on existing classes.
 ## Sample URLs of other Style Guides
 
 - [GitHub's Ruby Guide](https://github.com/styleguide/ruby)
-- [Apple's Guidlines](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)
+- [Apple's Guidelines](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)
 - [Luke Redpath's Guide](http://lukeredpath.co.uk/blog/my-objective-c-style-guide.html)
 - [Google's Objective-C Guide](http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml)
 - [Marcus Zarra's Guide](http://www.cimgf.com/zds-code-style-guide/)
