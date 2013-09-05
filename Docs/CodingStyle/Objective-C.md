@@ -95,7 +95,7 @@ NSString * const kTTNotificationsApplicationOffline = @"com.twotoasters.notifica
 
 ````
 
-### Constants should be preferred over the preprocessor (`#define`) when possible.
+### Constants should be preferred over the preprocessor (`#define`)
 
 Constants in global namespace should always start with a lowercase "k"
 
@@ -107,11 +107,13 @@ extern NSString * const kTTNotificationLocationUpdated;
 
 // Implementation
 NSString * const kTTAPIBaseURL = @"http://www.twotoasters.com";
-NSString * const kTTNotificationLocationUpdated = @"com.twotoasters.notification.loactionUpdated";
+NSString * const kTTNotificationLocationUpdated = @"com.twotoasters.notification.locationUpdated";
 
 ````
 
-`#define` uses the preprocessor to replace the values with the defined value or macro. For example, `#define SOME_VAL 3` replaces all samples of `SOME_VAL` with 3, but also you don't get the type safety of a constant definition of the value. Actual constants should be used in favor of preprocessor macros.
+`#define` uses the preprocessor to replace the values with the defined value or macro. For example, `#define SOME_VAL 3` replaces all samples of `SOME_VAL` with 3, but also you don't get the type safety of a constant definition of the value. Actual constants should be used in favor of preprocessor `#define` constants.
+
+
 
 - [Preprocessor Smells](http://qualitycoding.org/preprocessor/)
 
@@ -123,7 +125,8 @@ When using blocks as a completion mechanism for UI updates, you may not know or 
 ````objective-c
 
 [myObject perfomBlock:^{
-	// this could be on a background queue depending on the object's implementation. To modify the UI, you should explicitly perform it on the main queue.
+	// this could be on a background queue depending on the object's implementation. 
+	// To modify the UI, you should explicitly perform it on the main queue.
 	dispatch_async(dispatch_get_main_queue(), ^{
 		// update UI.
 	});
@@ -131,6 +134,37 @@ When using blocks as a completion mechanism for UI updates, you may not know or 
 }];
 
 ````
+
+If your block is being copied it needs change all references to self to weak references. You should convert the weak reference back to a strong reference before dereferencing. 
+
+You should turn your weak reference to self into a strong reference in the block if and only if another thread could change the retain count of self during the block's execution.
+
+````
+// stack block
+    void (^stackBlock)(void) = ^{
+        [self updateUI];
+    };
+
+    stackBlock();
+
+    // weak block
+    __weak typeof(self) weakSelf = self;
+    [apiClient perfomAction:^{
+        [weakSelf updateUI];
+    }];
+    
+    // weak block with potential for self to change
+		NSInteger localInt = _someIvarInt;
+    __weak typeof(self) weakSelf = self;
+    [apiClient perfomAction:^{
+        typeof(self) strongSelf = weakSelf;
+        // ...
+        [strongSelf updateUIWithInt:localInt];
+    }];
+
+````
+
+Rule: You should always check that a block is not nil before executing.
 
 ### Dot syntax
 
@@ -142,39 +176,69 @@ In the "setter" case, any dot syntax instance method call is OK.
 
 In the "getter" case, don't use dot syntax when the method returns `void` or is in the `init` family. So you would not call `tableView.reloadData` nor `[NSObject alloc].init`, even though `tableView.indexPathForSelectedRow` is OK.
 
-### Don't initialize variables to 0 or nil in the init method; it's redundant. 
+### Don't initialize instance variables to 0 or nil in the init method; it's redundant. 
 
 All memory for a newly allocated object is initialized to 0, so don't clutter up the init method by re-initializing variables to 0 or nil.
 
 ### NSInteger & CGFloat vs. int & float - Apple provided types should be preferred over their C types.
 
-### Keep your header files simple as possible
+Note, use these types in the correct context. For example a CGFloat should refer to something that will eventually be passed back into Core Graphics, NSTimeInterval should only be used in place of a double if it is representing a time interval.
 
-The public APIs defined in the header files of the objects you create should only define what consumers should be able to call. Any methods or properties used solely by the class itself should be defined in a class extention in your implementation file.
+### Keep your public header files simple
+
+The public APIs defined in the header files of the classes you create should only define what consumers should be able to call. Any methods or properties used solely by the class itself should be defined in a class extension in your implementation file.
 
 ````objective-c
 
-@interface TTSomeObject ()
- 	/// ... 
+#import <Foundation/Foundation.h>
+#import "TTDataProtocol.h"
+
+@class TTObjectManager;
+
+typedef void(^TTAPICompletionBlock)(id response, NSError *error);
+
+@interface TTAPIClient : NSObject
+
+@property (readonly) NSManagedObjectContext *mainContext;
+
+/** Fetch Items from the API for the specified page
+@param page The page to load items from where page identifies the range of items to load. Required
+@param completionOrNil A completion block to perform when the items are completed
+*/
+- (void)fetchItemsInPage:(TTPage *)page completion:(TTAPICompletionBlock)completionOrNil;
+
+@end
+
+
+----------------
+
+#import "TTAPIClient.h"
+
+@interface TTAPIClient ()
+
+@property (readwrite) NSManagedObjectContext *mainContext;
+
 @end
 
 ````
 
 If you need subclasses to have access to it's superclass's implementations, use a category to create a "protected" header.
 
+You should import your superclass header file and any public protocols your class conforms to. Other classes should be forward declared with `@class`.
+
 You should even put 'non-public' protocols you are conforming to on your class extension:
 
 ````objective-c
 
 @interface TTSomeObject () <UITableViewDelegate>
- 	/// ... 
+//
 @end
 
 ````
 
 ## Documentation
 
-Use the [appledoc](http://gentlebytes.com/appledoc/) style when you can to provide easy documentation with appledoc. These should be done on all public headers. If a private method is more complicated, it too should have a descriptive comment.
+Use the [doxygen](http://www.stack.nl/~dimitri/doxygen/) style for comments. These should be done on all public headers. If a private method is more complicated, it too should have a descriptive comment.
 
 ````objective-c
 
