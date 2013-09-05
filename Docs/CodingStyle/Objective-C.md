@@ -140,7 +140,7 @@ If your block is being copied it needs change all references to self to weak ref
 You should turn your weak reference to self into a strong reference in the block if and only if another thread could change the retain count of self during the block's execution.
 
 ````
-// stack block
+    // stack block
     void (^stackBlock)(void) = ^{
         [self updateUI];
     };
@@ -154,7 +154,7 @@ You should turn your weak reference to self into a strong reference in the block
     }];
     
     // weak block with potential for self to change
-		NSInteger localInt = _someIvarInt;
+    NSInteger localInt = _someIvarInt;
     __weak typeof(self) weakSelf = self;
     [apiClient perfomAction:^{
         typeof(self) strongSelf = weakSelf;
