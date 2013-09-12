@@ -254,20 +254,18 @@ Use the [doxygen](http://www.stack.nl/~dimitri/doxygen/) style for comments. The
 
 ### Project and Class Prefixing 
 
-Since objective-c doesn't expose namespacing, use prefixes to "namespace" classes and methods on categories.
+Since objective-c doesn't expose namespacing, use prefixes to "namespace" classes and methods on categories. Prefixes should be three characters.
 
-	TT = Two Toasters
+	TWT = Two Toasters
 	[project_prefix]_colorWithColor:
 
-### Project Naming and Layout
+### Project Directory Structure
 
 The top level of a project, should be structured as follows:
 
 	README.md
 	Rakefile
 	Docs
-	├──ProjectLog.md
-	├──ReleaseLog.md
 	├──FunctionalSpec.md
 	├──APISpec.md
 	Code
@@ -283,37 +281,25 @@ In the `Code` directory, the structure should mimic the groups in Xcode and foll
  	SomeProj
 	├── Application | Framework
 	│   ├── AppDelegate.h|.m
+	│   ├── Environment.h|.m
 	│   ├── Supporting Files
 	│   │   ├── en.lproj
 	│   │   │   ├── InfoPlist.strings
 	│   │   ├── SomeProj-Info.plist
 	│   │   ├── SompProj-Prefix.pch
 	│   │   ├── main.m
-	│   ├── Categories
-	│   ├── Protocols
 	│   ├── Resources
 	├── Models
+	├── ModelControllers	
 	├── Views
-	├── Controllers
+	├── ViewControllers
 	SomeProj-UnitTests
 	SomeProj-IntegrationTests
 	Libraries
 	├── JSONKit
 	├── RestKit
 
-### Resource Naming
-
-Resources should all be in the same Resource directory and organized as follows:
-
-	ui-[view]-[purpose]~iphone.png
-	ui-[view]-[purpose]~ipad.png
-	ui-[view]-[purpose]@2x~iphone.png
-	ui-[view]-[purpose]@2x~ipad.png
-
-	ui-generic-[purpose]~iphone.png
-	ui-generic-[purpose]@2x~iphone.png
-	ui-generic-[purpose]~ipad.png
-	ui-generic-[purpose]@2x~ipad.png
+This layout is a guideline but can be modified by the project lead as needed, what is important is to mirror the top level group structure in Xcode to folders on the file system and to maintain that structure as the project continues.
 
 ### Class Naming 
 
@@ -322,13 +308,15 @@ Whether they're a standard part of Cocoa or your own creation, class names are a
 ````objective-c
 
 	// Wrong
-	ttSampleObject 
-	TTSampleObjectRef
-	SampleObject
-	TTSampleObj
+	ttSampleController
+	TTSampleControllerRef
+	SampleController
+	TTSampleCtrlr
+	NSHttpUrlRequest
 	
 	// Correct
 	TTSampleObject
+	NSHTTPURLRequest
 
 ````
 
@@ -368,7 +356,7 @@ When creating properties, you should always synthesize the property with an inst
 	@synthesize testString = _testString;
 ````
 
-BOOL properties should define a getter that is prefixed with `is` or `has`.
+Properties that are expressed as an adjective may define a getter that is prefixed with `is` or `has`.
 
 ````objective-c
 	@propery (nonatomic, assign, getter=isEditable) BOOL editable;
@@ -376,7 +364,7 @@ BOOL properties should define a getter that is prefixed with `is` or `has`.
 
 ### Protocol Naming
 
-When creating protocols for use as delegates, you should alwasy model the method similar to how Apple names UITableView Data Source methods.
+When creating protocols for use as delegates, you should model the method similar to how Apple names UITableView Data Source methods.
 
 ````objective-c
 	// Wrong 
@@ -399,15 +387,15 @@ Categories should be used when creating reusable extensions on existing classes.
 	#define BACKGROUND_COLOR [UIColor redColor]
 
 	// Correct
-	@interface UIColor (TTColorAdditions)
+	@interface UIColor (TWTColorAdditions)
 	
-	- (UIColor *)TT_backgroundColor;
+	- (UIColor *)twt_backgroundColor;
 	
 	@end
 
-	@implementation UIColor (TTColorAdditions)
+	@implementation UIColor (TWTColorAdditions)
 	
-	- (UIColor *)TT_backgroundColor 
+	- (UIColor *)twt_backgroundColor 
 	{
 		return [UIColor redColor];
 	}
